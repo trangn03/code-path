@@ -11,3 +11,9 @@ def print_catchphrase(character):
         print("Silly old bear.")
     else:
         print(f"Sorry! I don't know {character}'s catchphrase!")
+        
+character = "Pooh"
+print_catchphrase(character)
+
+character = "Piglet"
+print_catchphrase(character)
