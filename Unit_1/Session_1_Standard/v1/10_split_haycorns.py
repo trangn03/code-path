@@ -5,11 +5,14 @@ split_haycorns() accepts a positive integer quantity as a parameter and returns 
 """
 
 def split_haycorns(quantity):
-    
-    pass
+    divisors = []
+    for i in range(1, quantity + 1):
+        if quantity % i == 0:
+            divisors.append(i)
+    return divisors
 
 quantity = 6
-split_haycorns(quantity)
+print(split_haycorns(quantity))
 
 quantity = 1
 split_haycorns(quantity)
