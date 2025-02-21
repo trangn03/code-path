@@ -14,10 +14,11 @@ def reverse_sentence(sentence):
     return reversed_sentence
         
 
-
-
 sentence = "tubby little cubby all stuffed with fluff"
 print(reverse_sentence(sentence))
 
 sentence = "Pooh"
 print(reverse_sentence(sentence))
+
+# "fluff with stuffed all cubby little tubby"
+# "Pooh"
