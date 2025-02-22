@@ -6,13 +6,20 @@ nor the maximum value in the array, or -1 if there is no such number.
 """
 
 def goldilocks_approved(nums):
-    pass
+    if (len(nums) > 2):
+        max_val = max(nums)
+        min_val = min(nums)
+
+        for num in nums: 
+            if ( num != max_val or num != min_val):
+                return num
+    return -1 
 
 nums = [3, 2, 1, 4]
-goldilocks_approved(nums)
+print(goldilocks_approved(nums))
 
 nums = [1, 2]
-goldilocks_approved(nums)
+print(goldilocks_approved(nums))
 
 nums = [2, 1, 3]
-goldilocks_approved(nums)
+print(goldilocks_approved(nums))
