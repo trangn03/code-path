@@ -5,12 +5,14 @@ You must modify the list in place;  you may not create any new lists as part of 
 """
 
 def running_sum(superhero_stats):
-	pass
-
+    # Loop through all of the integers starting from 2nd element
+    for i in range(1, len(superhero_stats)):
+        # Update the current element to be sum of itself and the prev element 
+        superhero_stats[i] += superhero_stats[i-1]
 
 #Example Usage
 
-superhero_stats = [1, 2, 3, 4]
+superhero_stats = [1, 2, 3, 4] # 1 + 2 = (3) + 3 = (6) + 4 = (10)
 running_sum(superhero_stats)
 
 superhero_stats = [1, 1, 1, 1, 1]

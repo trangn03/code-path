@@ -4,18 +4,25 @@ Return the list in the form [x1,y1,x2,y2,...,xn,yn].
 """
 
 def shuffle(cards):
-	pass
+    # Initialize new list 
+    list = [] 
+    # Calculate n as half length of the list 
+    n = len(cards) // 2
+    for i in range(n):
+        list.append(cards[i])
+        list.append(cards[i+n])
+    return list
 
 #Example Usage
 
 cards = ['Joker', 'Queen', 2, 3, 'Ace', 7]
-shuffle(cards)
+print(shuffle(cards))
 
 cards = [9, 2, 3, 'Joker', 'Joker', 3, 2, 9]
-shuffle(cards)
+print(shuffle(cards))
 
 cards = [10, 10, 2, 2]
-shuffle(cards)
+print(shuffle(cards))
 
 # Example Output:
 """
