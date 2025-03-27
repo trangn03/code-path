@@ -23,8 +23,22 @@ def remove_song(playlist_head, song):
     current = playlist_head
     while current.next:
         if current.next.song == song:
-            current = current.next.next  
+            current.next = current.next.next  
             return playlist_head 
         current = current.next
 
     return playlist_head
+
+# Example Usage:
+
+playlist = SongNode("SOS", "ABBA", 
+                SongNode("Simple Twist of Fate", "Bob Dylan",
+                    SongNode("Dreams", "Fleetwood Mac",
+                        SongNode("Lovely Day", "Bill Withers"))))
+
+print_linked_list(remove_song(playlist, "Dreams"))
+"""
+Expected Output:
+
+('SOS', 'ABBA') -> ('Simple Twist of Fate', 'Bob Dylan') -> ('Lovely Day', 'Bill Withers')
+"""
