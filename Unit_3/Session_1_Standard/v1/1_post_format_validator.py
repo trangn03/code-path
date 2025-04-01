@@ -8,16 +8,29 @@ Tags are closed in the correct order.
 """
 
 def is_valid_post_format(posts):
-  pass
-
+  # Have a dict to store these value
+  parenthesis = {")" : "(", "]" : "[", "}" : "{"}
+  # Initialize stack to keep track of opening tags
+  stack = []
+  # Go through the dict 
+  for char in posts:
+    if char in "([{":
+      stack.append(char)
+    elif char in ")]}":
+      if not stack or stack.pop() != parenthesis[char]:
+        return False 
+  return len(stack) == 0
+  
 # Example Usage:
 
 print(is_valid_post_format("()"))
 print(is_valid_post_format("()[]{}")) 
 print(is_valid_post_format("(]"))
 
-# Example Output:
+"""
+Example Output:
 
-# True
-# True
-# False
+True
+True
+False
+"""

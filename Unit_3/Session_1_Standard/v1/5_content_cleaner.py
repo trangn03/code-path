@@ -10,7 +10,18 @@ Note that an empty string is also considered clean.
 """
 
 def clean_post(post):
-  pass
+  stack = []
+  
+  for char in post:
+    # If the stack is not empty and the top character in the stack forms a removable pair with the current character 
+    # (i.e., one is the lowercase version and the other is the uppercase version of the same letter), pop the top character from the stack.
+    # Otherwise, push the current character onto the stack
+    if stack and stack[-1] == char.swapcase():
+      stack.pop()
+    else:
+      stack.append(char)
+  return ''.join(stack)
+  
 
 # Example Usage:
 
@@ -18,8 +29,9 @@ print(clean_post("poOost"))
 print(clean_post("abBAcC")) 
 print(clean_post("s")) 
 
-# Example Output:
+"""
+Example Output:
+post
 
-# post
-
-# s
+s
+"""
